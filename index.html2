@@ -1,0 +1,141 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --cerulean: #2A8CBA;
+            --pastel-pink: #F6C6D0;
+            --soft-grey: #F4F4F4;
+            --dark-grey: #222;
+            --white: #fff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--cerulean);
+            color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--cerulean);
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.05em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            position: relative;
+            padding: 5px 8px;
+            border-radius: 6px;
+            transition: 0.3s;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.04em;
+        }
+
+        nav a:hover, nav a:focus {
+            background: var(--pastel-pink);
+            color: var(--cerulean);
+            box-shadow: 0 0 10px var(--pastel-pink);
+        }
+
+        section {
+            padding: 80px 40px;
+            max-width: 900px;
+            margin: auto;
+            background: rgba(255 255 255 / 0.1);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.4rem;
+            color: var(--white);
+            letter-spacing: 0.07em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+
+        .card {
+            background: rgba(255 255 255 / 0.9);
+            color: var(--dark-grey);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: var(--cerulean);
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(255 255 255 / 0.2);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        footer a {
+            margin: 0 10px;
+            color: var(--pastel-pink);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Swirls */
+        .swirl {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .swirl1 {
+            background: var(--pastel-pink);
+            top: 10%;
+            left: -100px;
+        }
+
+        .swirl2 {
+            background: var(--soft-grey);
+            bottom: 10%;
+            right: -100px;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
