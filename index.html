@@ -1,196 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Aniah Mathurin | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniah Mathurin</title>
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    <style>
+        :root {
+            --cerulean: #2A8CBA;
+            --pastel-pink: #F6C6D0;
+            --soft-grey: #F4F4F4;
+            --dark-grey: #444;
+        }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f1f5f9;
-      color: #1e293b;
-    }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--soft-grey);
+            color: var(--dark-grey);
+            scroll-behavior: smooth;
+        }
 
-    /* NAVBAR */
-    nav {
-      position: sticky;
-      top: 0;
-      background: #007ba7; /* cerulean blue */
-      padding: 1rem;
-      text-align: center;
-      z-index: 1000;
-    }
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 15px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 6px 10px;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
+        .name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--cerulean);
+        }
 
-    nav a:hover {
-      background: #ffb6c1;
-      color: #1e293b;
-    }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--dark-grey);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 8px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
 
-    nav a:active {
-      background: #ffc0cb;
-    }
+        nav a:hover, nav a:focus {
+            background: var(--pastel-pink);
+            color: black;
+            box-shadow: 0 0 10px var(--pastel-pink);
+        }
 
-    /* HERO */
-    header {
-      height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      background: linear-gradient(135deg, #007ba7, #5dade2);
-      color: white;
-      overflow: hidden;
-    }
+        /* Sections */
+        section {
+            padding: 80px 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-    header h1 {
-      font-family: Georgia, serif;
-      font-size: 3.5rem;
-      z-index: 2;
-    }
+        h2 {
+            color: var(--cerulean);
+        }
 
-    /* SWIRLS */
-    .swirl {
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border: 2px solid #ffc0cb;
-      border-radius: 50%;
-      opacity: 0.2;
-      animation: float 10s infinite ease-in-out;
-    }
+        /* Swirl background */
+        .swirl {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            z-index: -1;
+        }
 
-    .swirl:nth-child(1) { top: 10%; left: 10%; }
-    .swirl:nth-child(2) { bottom: 15%; right: 15%; animation-delay: 3s; }
-    .swirl:nth-child(3) { top: 50%; left: 70%; animation-delay: 6s; }
+        .swirl1 {
+            background: var(--cerulean);
+            top: 10%;
+            left: -100px;
+        }
 
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-25px); }
-      100% { transform: translateY(0); }
-    }
+        .swirl2 {
+            background: var(--pastel-pink);
+            bottom: 10%;
+            right: -100px;
+        }
 
-    /* SECTIONS */
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 3rem 1.5rem;
-    }
+        /* Cards */
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
 
-    h2 {
-      color: #007ba7;
-      border-bottom: 2px solid #cbd5f5;
-      padding-bottom: 0.5rem;
-    }
+        /* Footer */
+        footer {
+            background: white;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
 
-    .card {
-      background: white;
-      padding: 1.5rem;
-      margin: 1rem 0;
-      border-radius: 10px;
-      border-left: 5px solid #007ba7;
-      transition: 0.3s;
-    }
+        footer a {
+            margin: 0 10px;
+            color: var(--cerulean);
+            text-decoration: none;
+        }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,123,167,0.2);
-    }
+        footer a:hover {
+            text-decoration: underline;
+        }
 
-    /* RED PLACEHOLDER */
-    .highlight {
-      color: red;
-      font-weight: bold;
-    }
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #007ba7;
-      color: white;
-    }
-
-    footer a {
-      color: #ffc0cb;
-      text-decoration: none;
-    }
-
-  </style>
+            nav a {
+                margin: 5px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<nav>
-  <a href="#academics">Academics</a>
-  <a href="#experience">Experiences</a>
-  <a href="#skills">Skillset</a>
-  <a href="#portfolio">Portfolio</a>
-</nav>
+<!-- Swirls -->
+<div class="swirl swirl1"></div>
+<div class="swirl swirl2"></div>
 
 <header>
-  <div class="swirl"></div>
-  <div class="swirl"></div>
-  <div class="swirl"></div>
-  <h1>Aniah Mathurin</h1>
+    <div class="name">Aniah Mathurin</div>
+    <nav>
+        <a href="#academics">Academics</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#expertise">Expertise</a>
+    </nav>
 </header>
 
 <section id="academics">
-  <h2>Academics</h2>
-  <div class="card">
-    <p><strong class="highlight">Duke University</strong></p>
-    <p>Major: <span class="highlight">[Biology]</span></p>
-    <p>GPA: <span class="highlight">[3.5]</span></p>
-  </div>
+    <h2>Academics</h2>
+    <div class="card">
+        <p><strong>University:</strong> Duke University</p>
+        <p><strong>GPA:</strong> 3.9 / 4.0</p>
+        <p><strong>Major:</strong> Business Administration</p>
+        <p><strong>Minor(s):</strong> Finance, Data Analytics Medicine, Policy</p>
+    </div>
 </section>
 
-<section id="experience">
-  <h2>Experiences</h2>
-  <div class="card">
-    <p><strong>Company Name</strong> — Role</p>
-    <p>Describe your impact and accomplishments here.</p>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Skillset</h2>
-  <div class="card">
-    <p>Languages: JavaScript, Python</p>
-    <p>Tools: Git, React</p>
-  </div>
+<section id="experiences">
+    <h2>Experiences</h2>
+    <div class="card">
+        <p>Internship at XYZ Company</p>
+        <p>Research Assistant in Healthcare Analytics</p>
+    </div>
 </section>
 
 <section id="portfolio">
-  <h2>Portfolio</h2>
-  <div class="card">
-    <p><strong>Project Name</strong></p>
-    <p>Short description of your project.</p>
-    <a href="#">View Project →</a>
-  </div>
+    <h2>Portfolio</h2>
+    <div class="card">
+        <p>Project 1: Financial Modeling Dashboard</p>
+        <p>Project 2: Healthcare Data Visualization</p>
+    </div>
+</section>
+
+<section id="expertise">
+    <h2>Expertise</h2>
+    <div class="card">
+        <p>Data Analysis</p>
+        <p>Financial Modeling</p>
+        <p>Strategic Planning</p>
+    </div>
 </section>
 
 <footer>
-  <p>Email: <span class="highlight">[aniahmathurin@duke.edu]</span></p>
-  <p>Phone: <span class="highlight">[813-727-7093]</span></p>
-  <p>University: <span class="highlight">Duke University</span></p>
-  <p>LinkedIn: <a href="#">[your link]</a></p>
-  <p>GitHub: <a href="#">[your link]</a></p>
-  <p>© 2026 Aniah Mathurin</p>
+    <p>Contact Information</p>
+    <p>
+        Phone: (813) 727-7093 |
+        Email: aniahmathurin@gmail.com
+    </p>
+    <p>
+        <a href="#">GitHub</a> |
+        <a href="#">LinkedIn</a>
+    </p>
 </footer>
 
 </body>
