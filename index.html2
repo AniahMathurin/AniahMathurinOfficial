@@ -1,12 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniah Mathurin</title>
+
     <style>
         :root {
             --cerulean: #2A8CBA;
-            --pastel-pink: #F6C6D0;
-            --soft-grey: #F4F4F4;
-            --dark-grey: #222;
-            --white: #fff;
+            --pastel-pink: #FFD1DC;
+            --soft-grey: #CBCBCB;
+            --dark-grey: #303234;
         }
 
         body {
